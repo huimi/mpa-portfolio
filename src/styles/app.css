@@ -1,0 +1,28 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	background: transparent;
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-size: 18px;
+}
+hr {
+  border: 0;
+  border-top: 1px solid;
+}
+.text-right {
+  text-align: end;
+}
+.text-end {
+  margin-top: auto;
+}
