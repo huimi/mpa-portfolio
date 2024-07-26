@@ -1,0 +1,26 @@
+@media screen and (min-width: 680px){
+    .normal-tab {
+        min-height: 480px;
+    }
+}
+@media screen and (min-width: 768px){
+    .normal-tab {
+        min-height: 400px;
+    }
+}
+@media screen and (min-width: 992px){
+    .normal-tab {
+        min-height: 350px;
+    }
+}
+.mobile-tab {
+    display: none;
+}
+@media screen and (max-width: 680px) {
+    .normal-tab {
+        display: none !important;
+    }
+    .mobile-tab {
+        display: block;
+    }
+}

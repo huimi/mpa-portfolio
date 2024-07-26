@@ -1,0 +1,138 @@
+@font-face { 
+  font-family: 'Poppins'; 
+  src: url('fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face { 
+  font-family: 'Poppins'; 
+  src: url('fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+$cyan: hsl(180, 66%, 49%);
+$darkViolet: hsl(257, 27%, 26%);
+    
+$red: hsl(0, 87%, 67%);
+
+$gray: hsl(0, 0%, 75%);
+$grayWhite: #eff1f7;
+$grayishViolet: hsl(257, 7%, 63%);
+$veryDarkBlue: hsl(255, 11%, 22%);
+$veryDarkViolet: hsl(260, 8%, 14%);
+
+$xsmall: 450px;
+$small: 600px;
+$medium: 768px;
+
+$fontSize: 18px;
+
+$fontFamily: 'Poppins', 'Segoe UI', 'Roboto', sans-serif;
+
+@mixin for-xsmall-device {
+  @media screen and (max-width: $xsmall) {
+    @content;
+  }
+}
+
+@mixin for-small-device {
+  @media screen and (max-width: $small) {
+    @content;
+  }
+}
+@mixin for-medium-device {
+  @media screen and (max-width: $medium) {
+    @content;
+  }
+}
+@mixin for-not-small-device {
+  @media screen and (min-width: $small) {
+    @content;
+  }
+}
+@mixin for-not-medium-device {
+  @media screen and (min-width: $medium) {
+    @content;
+  }
+}
+
+input, button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+@mixin reset-input {
+  color: $veryDarkBlue;
+  &::placeholder {
+    opacity: 0.5;
+    color: $gray;
+  }
+  &.error::placeholder {
+    color: $red;
+  }
+}
+
+@mixin reset-ul {
+  list-style: none;
+}
+
+@mixin general-link($hover: $cyan) {
+  text-decoration: none;
+  color: $grayishViolet;
+  &:hover {
+    color: $hover;
+  }
+}
+
+@mixin general-btn($borderRadius: 2em) {
+  display: inline-block;
+  border: none;
+  padding: 0.625em 1.5em;
+  margin: 0;
+  text-decoration: none;
+  background-color: $cyan;
+  color: #ffffff;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: $borderRadius;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+  }
+}
+
+@mixin icon-btn {
+  display: inline-block;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:focus {
+    // outline: 1px solid #fff;
+    // outline-offset: -4px;
+  }
+}
+
+@mixin copy-btn {
+  &:focus {
+    outline: 1px solid $darkViolet;
+    background: $darkViolet;
+  }
+}

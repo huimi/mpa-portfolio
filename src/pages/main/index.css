@@ -1,3 +1,13 @@
+:root {
+  --darkblue: #20303f;
+  --gray90: #E5E5E5;
+  --lightblue: #50D0FF;
+  --mediumblue: #00b7ff;
+  --linkblue: hsl(199, 33%, 60.95%);
+  --softred: #ff7f50;
+  --info: #50A4FF;
+}
+
 body {
   font-family: "Roboto", "DM Sans", 'Oxygen', 'Ubuntu', sans-serif;
 }
@@ -15,7 +25,7 @@ ul,ol {
 p {
     margin: 0 0 1.5625em;
 }
-h1, h4, h5 {
+h1, h2, h3, h4, h5 {
     margin: 0 0 1em;
 }
 a {
@@ -84,7 +94,7 @@ hr {
   align-items: center;
   column-gap: 1em;
   flex-wrap: wrap;
-  list-style: none;
+  /* list-style: none; */
   margin-left: 0;
 }
 

@@ -1,4 +1,4 @@
-* {
+*, *::after, *::before {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -16,10 +16,16 @@ body {
   overflow-y: scroll;
   font-size: 18px;
 }
+
 hr {
   border: 0;
   border-top: 1px solid;
 }
+
+ul {
+  list-style: none
+}
+
 .text-right {
   text-align: end;
 }

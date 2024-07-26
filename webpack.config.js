@@ -1,16 +1,13 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-// development only
-// const logging = require('webpack/lib/logging/runtime')
-// logging.configureDefaultLogger({
-//   level: 'verbose'
-// });
-
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = (env, argv) => ({
   entry: {
     'index': './src/pages/main/index.js',
-    'bar-chart/index': './src/pages/bar-chart/index.js'
+    'bar-chart/index': './src/pages/bar-chart/index.js',
+    'countdown-timer/index': './src/pages/countdown-timer/index.js',
+    'url-shortening/index': './src/pages/url-shortening/index.js'
   },
   plugins: [
     new HtmlWebPackPlugin({
@@ -28,14 +25,12 @@ module.exports = (env, argv) => ({
       template: 'src/pages/countdown-timer/index.html',
       filename: 'countdown-timer/index.html'
     }),
+    new MiniCssExtractPlugin()
   ],
   output: {
     clean: true
   },
   devtool: argv.mode === 'development' ? 'eval-source-map':false,
-  devServer: {
-    hot: true
-  },
   module: {
     rules: [
       {
@@ -70,42 +65,18 @@ module.exports = (env, argv) => ({
         test: /\.(sa|sc|c)ss$/,
         exclude: /\.module\.(sa|sc|c)ss$/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader'
         ]
       },
       {
-        test: /\.(png|jp(e*)g|svg|gif)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: (url, resourcePath, context) => {
-              if(argv.mode === 'development') {
-                const relativePath = path.relative(context, resourcePath);
-                return `${relativePath}`;
-              }
-              return `/assets/images/${path.basename(resourcePath)}`;
-            },
-            esModule: false,
-          }
-        }
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            outputPath: (url, resourcePath, context) => {
-              if(argv.mode === 'development') {
-                const relativePath = path.relative(context, resourcePath);
-                return `${relativePath}`;
-              }
-              return `/assets/fonts/${path.basename(resourcePath)}`;
-            }
-          }
-        }
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
       }
     ]
   },

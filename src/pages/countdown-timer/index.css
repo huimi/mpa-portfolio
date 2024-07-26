@@ -1,16 +1,8 @@
-*, *::after, *::before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 :root {
   /* ### Primary */
   --grayishblue: hsl(237, 18%, 59%);
   --softred: hsl(345, 95%, 68%);
-
   /* ### Neutral */
-
   --lightwhite: hsl(0, 0%, 100%);
   --darkblue: hsl(236, 21%, 26%);
   --vdarkblue: hsl(235, 16%, 14%);
@@ -26,27 +18,12 @@ body {
   font-style: normal;
   font-size: calc(14px + 0.390625vw);
   background-color: var(--vdarkblue);
-  background-image: url('./images/bg-stars.svg');
+  background-image: url('~images/countdown-timer-bg-stars.svg');
 }
 
 #root {
   width: 100%;
   height: 100%;
-}
-
-/* Reset */
-ul {
-  list-style: none
-}
-
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
 }
 
 .container {
@@ -64,7 +41,7 @@ ul {
   flex-direction: column;
 }
 .footer {
-  background-image: url('./images/pattern-hills.svg');
+  background-image: url('~images/countdown-timer-pattern-hills.svg');
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;

@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Bar from 'components/bar.js';
 import 'styles/app.css';
-import 'styles/variables.css';
 import './index.css';
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

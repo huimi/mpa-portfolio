@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Navbar from 'components/navbar';
+import Tab from 'components/tab';
+import Card from 'components/card';
+import Footer from 'components/footer';
 import Me from 'images/img.jpg';
 import './index.css';
 import 'styles/app.css';
-import 'styles/variables.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,7 +18,7 @@ root.render(
       <div className="container container-large main" tabIndex="-1">
         <img alt="me" src={ Me } width="3012" height="2288"/>
         <div className="intro">
-          <h1 className="no-padding-top">Hi, I’m Huilan Hsieh.</h1>
+          <h1 className="no-padding-top">Hi, I'm Huilan Hsieh.</h1>
           <p>
             I am a front-end developer passionate about building responsive and visually appealing web applications.
           </p>
@@ -30,9 +32,11 @@ root.render(
       </div>
       <div id="experience" className="container container-large experience margin-top-large">
         <h1>Experience</h1>
+        <Tab />
       </div>
       <div id="project" className="container container-large project margin-top-medium">
         <h1>Project</h1>
+        <Card />
       </div>
       <div id="challenge" className="container container-large margin-top-medium">
         <h1>Challenge</h1>
@@ -49,7 +53,7 @@ root.render(
           </li>
         </ul>
       </div>
+      <Footer />
     </div>
   </React.StrictMode>
 );
-
