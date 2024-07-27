@@ -38,7 +38,7 @@ function Navbar () {
         </ul>
       </div>
       <Button className="hamburger icon-btn"
-        text={ <img height="28" alt="menu" src={ Menu } /> }
+        text={ <img height="28" alt="menu" src={Menu} /> }
         onClick={() => setMenu(prevM => !prevM)}
         onBlur={() => setMenu(false)}
       />

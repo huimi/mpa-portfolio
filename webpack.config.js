@@ -1,9 +1,10 @@
-const path = require("path");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env, argv) => ({
   entry: {
+    // eslint-disable-next-line quote-props
     'index': './src/pages/main/index.js',
     'bar-chart/index': './src/pages/bar-chart/index.js',
     'countdown-timer/index': './src/pages/countdown-timer/index.js',
@@ -25,12 +26,17 @@ module.exports = (env, argv) => ({
       template: 'src/pages/countdown-timer/index.html',
       filename: 'countdown-timer/index.html'
     }),
+    new HtmlWebPackPlugin({
+      chunks: ['url-shortening/index'],
+      template: 'src/pages/url-shortening/index.html',
+      filename: 'url-shortening/index.html'
+    }),
     new MiniCssExtractPlugin()
   ],
   output: {
     clean: true
   },
-  devtool: argv.mode === 'development' ? 'eval-source-map':false,
+  devtool: argv.mode === 'development' ? 'eval-source-map' : false,
   module: {
     rules: [
       {
@@ -71,12 +77,26 @@ module.exports = (env, argv) => ({
         ]
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.svg/,
+        type: 'asset/inline'
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: '[name][ext]',
+          outputPath: 'static/images/',
+          publicPath: 'static/images/'
+        }
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: '[name][ext]',
+          outputPath: 'static/fonts/',
+          publicPath: 'static/fonts/'
+        }
       }
     ]
   },
@@ -86,7 +106,8 @@ module.exports = (env, argv) => ({
       components: path.resolve(__dirname, 'src', 'components'),
       images: path.resolve(__dirname, 'src', 'assets', 'images'),
       fonts: path.resolve(__dirname, 'src', 'assets', 'fonts'),
-      styles: path.resolve(__dirname, 'src', 'styles')
+      styles: path.resolve(__dirname, 'src', 'styles'),
+      static: path.resolve(__dirname, 'src', 'assets', 'images')
     }
   }
 })

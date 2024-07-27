@@ -4,7 +4,7 @@ import Navbar from 'components/navbar';
 import Tab from 'components/tab';
 import Card from 'components/card';
 import Footer from 'components/footer';
-import Me from 'images/img.jpg';
+import Me from 'static/img.jpg';
 import './index.css';
 import 'styles/app.css';
 
@@ -16,7 +16,7 @@ root.render(
         <Navbar />
       </header>
       <div className="container container-large main" tabIndex="-1">
-        <img alt="me" src={ Me } width="3012" height="2288"/>
+        <img alt="me" src={Me} width="3012" height="2288" loading="lazy" />
         <div className="intro">
           <h1 className="no-padding-top">Hi, I'm Huilan Hsieh.</h1>
           <p>

@@ -6,6 +6,9 @@ const compat = new FlatCompat()
 
 export default [
   // standard,
+  {
+    ignores: ["dist/", "node_modules"]
+  },
   ...compat.extends('eslint-config-standard'),
   {
     rules: {

@@ -6,7 +6,7 @@ function Footer () {
   return (
     <footer className="footer container">
       <div className="logo">
-        <img height="36" alt="logo" src={ Logo } />
+        <img height="36" alt="logo" src={Logo} />
       </div>
       <div className="footer-container">
         <div className="content-container">
