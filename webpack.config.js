@@ -101,7 +101,7 @@ module.exports = (env, argv) => ({
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'static/fonts/[name][ext]', // Bug: https://github.com/webpack-contrib/mini-css-extract-plugin/issues/1005
+          filename: 'static/fonts/[name][ext]', // Reference: https://github.com/webpack-contrib/mini-css-extract-plugin/issues/1005
         },
       },
     ],

@@ -1,5 +1,3 @@
-// import react from 'eslint-plugin-react';
-import  eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import { FlatCompat } from '@eslint/eslintrc'
 
 const compat = new FlatCompat()
