@@ -4,7 +4,7 @@ import Navbar from 'components/navbar';
 import Tab from 'components/tab';
 import Card from 'components/card';
 import Footer from 'components/footer';
-import Me from 'static/img.jpg';
+import Me from 'images/img.jpg';
 import './index.css';
 import 'styles/app.css';
 

@@ -9,28 +9,28 @@ import * as styles from 'styles/card.module.css';
 const projectData = [
   {
     name: 'Portfolio',
-    img: require('static/portfolio.png'),
+    img: require('images/portfolio.png'),
     url: '/',
     content: 'Personal portfolio.',
     tool: ['React', 'Python', 'Flask', 'Google App Engine']
   },
   {
     name: 'PMS',
-    img: require('static/pms.png'),
+    img: require('images/pms.png'),
     url: 'https://pms.shalom.com.tw/web/login/?to=home',
     content: 'Scalable Hotel property management system.',
     tool: ['BackboneJS', 'JQuery', 'RESTful API']
   },
   {
     name: 'Self Check-In Kiosk',
-    img: require('static/sci.jpeg'),
+    img: require('images/sci.jpeg'),
     url: 'https://www.shalom.com.tw/',
     content: 'Hotel Self Check-in Kiosk application.',
     tool: ['React Native']
   },
   {
     name: 'Pyladies Taiwan',
-    img: require('static/pyladies.png'),
+    img: require('images/pyladies.png'),
     url: 'https://tw.pyladies.com/',
     content: 'Landing page and other pages for Pyladies Taiwan.',
     tool: ['React', 'ExpressJS', 'Python']

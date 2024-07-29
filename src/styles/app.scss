@@ -153,8 +153,7 @@ p {
     }
     button {
       line-height: 1;
-      margin: 0.8em;
-      @include v.general-btn($borderRadius: 0.2em);
+      @include v.general-btn($borderRadius: 0.2em, $margin: 0.8em);
       @include v.copy-btn;
     }
   }

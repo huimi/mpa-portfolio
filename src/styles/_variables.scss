@@ -86,11 +86,11 @@ input, button {
   }
 }
 
-@mixin general-btn($borderRadius: 2em) {
+@mixin general-btn($borderRadius: 2em, $margin: 0) {
   display: inline-block;
   border: none;
   padding: 0.625em 1.5em;
-  margin: 0;
+  margin: $margin;
   text-decoration: none;
   background-color: $cyan;
   color: #ffffff;
@@ -123,10 +123,6 @@ input, button {
   -moz-appearance: none;
   &:hover {
     opacity: 0.8;
-  }
-  &:focus {
-    // outline: 1px solid #fff;
-    // outline-offset: -4px;
   }
 }
 
