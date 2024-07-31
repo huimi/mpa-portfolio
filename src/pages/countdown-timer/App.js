@@ -68,14 +68,18 @@ function App () {
   const timeId = useRef(null);
 
   useEffect(() => {
-    if (time.diff === 0) {
+    if (time.diff < 0) {
       clearInterval(timeId.current);
-    }
-  }, [time.diff])
-
-  useEffect(() => {
-    timeId.current = setInterval(() => {
-      if (time.diff > 0) {
+      setTime({
+        diff: 0,
+        ...getTimeNumber(0),
+        sFlip: false,
+        mFlip: false,
+        hFlip: false,
+        dFlip: false
+      })
+    } else if (timeId.current === null) {
+      timeId.current = setInterval(() => {
         setTime(t => {
           const { seconds, minutes, hours, days } = getTimeNumber(t.diff - 1);
           return {
@@ -90,11 +94,9 @@ function App () {
             dFlip: days !== t.days
           }
         });
-      }
-    }, 1100);
-    return () => clearInterval(timeId.current);
-  // eslint-disable-next-line
-  }, []);
+      }, 1100);
+    }
+  }, [time.diff]);
 
   return (
     <div className="container">
